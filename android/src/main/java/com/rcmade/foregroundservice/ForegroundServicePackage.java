@@ -1,4 +1,4 @@
-package com.supersami.foregroundservice;
+package com.rcmade.foregroundservice;
 
 import java.util.Arrays;
 import java.util.Collections;

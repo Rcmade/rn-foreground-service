@@ -1,4 +1,4 @@
-# @supersami/rn-foreground-service v2 🤟
+# @rcmade/rn-foreground-service v2 🤟
 
 Looking for contributors to help maintain this repository, as I am currently busy and unable to keep it up to date.
 

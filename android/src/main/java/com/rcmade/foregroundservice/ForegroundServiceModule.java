@@ -1,5 +1,5 @@
-package com.supersami.foregroundservice;
-
+package com.rcmade.foregroundservice;
+import android.os.Build;
 import android.content.ComponentName;
 import android.content.Intent;
 import android.app.NotificationManager;
@@ -13,10 +13,10 @@ import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
 import com.facebook.react.bridge.ReadableMap;
 
-import static com.supersami.foregroundservice.Constants.ERROR_INVALID_CONFIG;
-import static com.supersami.foregroundservice.Constants.ERROR_SERVICE_ERROR;
-import static com.supersami.foregroundservice.Constants.NOTIFICATION_CONFIG;
-import static com.supersami.foregroundservice.Constants.TASK_CONFIG;
+import static com.rcmade.foregroundservice.Constants.ERROR_INVALID_CONFIG;
+import static com.rcmade.foregroundservice.Constants.ERROR_SERVICE_ERROR;
+import static com.rcmade.foregroundservice.Constants.NOTIFICATION_CONFIG;
+import static com.rcmade.foregroundservice.Constants.TASK_CONFIG;
 
 public class ForegroundServiceModule extends ReactContextBaseJavaModule {
 
@@ -74,7 +74,13 @@ public class ForegroundServiceModule extends ReactContextBaseJavaModule {
             intent.setAction(Constants.ACTION_FOREGROUND_SERVICE_START);
             intent.putExtra(NOTIFICATION_CONFIG, Arguments.toBundle(notificationConfig));
             ForegroundService.setReactContext(getReactApplicationContext());
-            ComponentName componentName = getReactApplicationContext().startService(intent);
+            // ComponentName componentName = getReactApplicationContext().startService(intent);
+            ComponentName componentName;
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                componentName = getReactApplicationContext().startForegroundService(intent);
+            } else {
+                componentName = getReactApplicationContext().startService(intent);
+            }
 
             if (componentName != null) {
                 promise.resolve(null);

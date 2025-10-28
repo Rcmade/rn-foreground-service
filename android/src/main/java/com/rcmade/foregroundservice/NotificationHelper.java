@@ -1,4 +1,4 @@
-package com.supersami.foregroundservice;
+package com.rcmade.foregroundservice;
 
 import android.app.Notification;
 import android.app.NotificationChannel;
@@ -18,7 +18,7 @@ import com.facebook.react.R;
 
 class NotificationHelper {
     private static final String TAG = "ForegroundService";
-    private static final String NOTIFICATION_CHANNEL_ID = "com.supersami.foregroundservice.channel";
+    private static final String NOTIFICATION_CHANNEL_ID = "com.rcmade.foregroundservice.channel";
 
     private static NotificationHelper instance = null;
     private NotificationManager mNotificationManager;

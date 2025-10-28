@@ -7,20 +7,20 @@ const foregroundServicePermTemplate = `
 `;
 const metadataTemplate = `
   <meta-data
-    android:name="com.supersami.foregroundservice.notification_channel_name"
+    android:name="com.rcmade.foregroundservice.notification_channel_name"
     android:value="Sticky Title"
   />
   <meta-data
-    android:name="com.supersami.foregroundservice.notification_channel_description"
+    android:name="com.rcmade.foregroundservice.notification_channel_description"
     android:value="Sticky Description."
   />
   <meta-data
-    android:name="com.supersami.foregroundservice.notification_color"
+    android:name="com.rcmade.foregroundservice.notification_color"
     android:resource="@color/blue"
   />
  
-  <service android:name="com.supersami.foregroundservice.ForegroundService"></service> // also define android:foregroundServiceType="" according to your use case
-  <service android:name="com.supersami.foregroundservice.ForegroundServiceTask"></service> // also define android:foregroundServiceType="" according to your use case
+  <service android:name="com.rcmade.foregroundservice.ForegroundService"></service> // also define android:foregroundServiceType="" according to your use case
+  <service android:name="com.rcmade.foregroundservice.ForegroundServiceTask"></service> // also define android:foregroundServiceType="" according to your use case
 `;
 
 const androidManifestPath = `${process.cwd()}/android/app/src/main/AndroidManifest.xml`;
